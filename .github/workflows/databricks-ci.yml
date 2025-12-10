@@ -1,0 +1,30 @@
+name: Deploy to Databricks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install databricks CLI
+        run: pip install databricks-cli databricks-sdk
+
+      - name: Configure databricks CLI
+        run: |
+          databricks configure --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN"
+
+      - name: Install dbt-databricks
+        run: pip install dbt-databricks
+
+      - name: Run dbt
+        run: dbt run --profiles-dir .
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
