@@ -7,6 +7,5 @@ with source as (
 select 
     customerID,
     first_name,
-    last_name,
     gender
 from source
