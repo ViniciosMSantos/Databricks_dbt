@@ -3,8 +3,8 @@ dbt_databricks:
   outputs:
     dev:
       type: databricks
-      catalog: dados_dev
-      schema: analytics
+      catalog: dados_prod
+      schema: silver
       host: "{{ env_var('DATABRICKS_HOST') }}"
       http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
       token: "{{ env_var('DATABRICKS_TOKEN') }}"
