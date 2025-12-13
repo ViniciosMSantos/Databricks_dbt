@@ -30,6 +30,9 @@ jobs:
 
       - name: Install dbt-databricks
         run: pip install dbt-databricks
+      
+      - name: Install dbt dependencies
+        run: dbt deps --profiles-dir .
 
       - name: Run dbt
         run: dbt run --profiles-dir .
