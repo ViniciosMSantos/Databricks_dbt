@@ -16,9 +16,17 @@ jobs:
       - name: Install databricks CLI
         run: pip install databricks-cli databricks-sdk
 
-      - name: Configure databricks CLI
+      - name: Configure databricks CLI (new)
         run: |
-          databricks configure --host "$DATABRICKS_HOST" --token "$DATABRICKS_TOKEN"
+          mkdir -p ~/.databricks
+          cat <<EOF > ~/.databricks/config
+          [DEFAULT]
+          host = $DATABRICKS_HOST
+          token = $DATABRICKS_TOKEN
+          EOF
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
 
       - name: Install dbt-databricks
         run: pip install dbt-databricks
