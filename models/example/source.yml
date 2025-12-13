@@ -13,5 +13,10 @@ sources:
 
         description: "sales_transaction"
 
+  - name: olist_src          
+    catalog: dados_dev      
+    schema: olist            
+    tables:
+    
       - name: tb_orders_bronze
       - name: tb_order_items_bronze
