@@ -12,3 +12,6 @@ sources:
       - name: sales_transactions
 
         description: "sales_transaction"
+
+      - name: tb_orders_bronze
+      - name: tb_order_items_bronze
