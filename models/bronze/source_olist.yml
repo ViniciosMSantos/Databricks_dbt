@@ -1,0 +1,14 @@
+version: 2
+ 
+
+sources:
+  - name: bakehouse
+    database: samples
+    tables:
+      - name: sales_customers
+
+        description: "Tabela de Clientes"
+
+      - name: sales_transactions
+
+        description: "Tabela de produtos vendidos"
