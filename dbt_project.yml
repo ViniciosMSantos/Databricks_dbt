@@ -32,5 +32,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_databricks:
     # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+
+    bronze:
+      +schema: bronze
+      +materialized: table
+    
+    silver:
+      +schema: silver
+      +materialized: table
+
+    gold:
+      +schema: gold
+      +materialized: table
