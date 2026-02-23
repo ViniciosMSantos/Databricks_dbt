@@ -12,8 +12,7 @@ select
     c.email_address as email,
     c.city as cidade,
     c.state as estado,
-    c.country as pais,
-    c.gender as genero
+    c.country as pais
 
 from {{ ref('tb_pedidos') }} p
     left join {{ ref('tb_clientes') }} c
