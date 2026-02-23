@@ -19,4 +19,4 @@ select id,
     end as usuario_conferencia,
     data_conferencia_contabilidade,
     data_competencia
-from { { source('dados_prod', 'unecont') } }
+from {{ source('dados_prod', 'unecont') }}  
