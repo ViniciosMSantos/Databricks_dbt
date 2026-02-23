@@ -2,13 +2,13 @@ version: 2
  
 
 sources:
-  - name: bakehouse
-    database: samples
+  - name: dados_prod
+    database: dados_prod
     tables:
-      - name: sales_customers
+      - name: unecont
 
-        description: "Tabela de Clientes"
+        description: "Tabela de Notas Fiscais"
 
-      - name: sales_transactions
+      - name: empresas_consolidado
 
-        description: "Tabela de produtos vendidos"
+        description: "Tabela de Empresas"
