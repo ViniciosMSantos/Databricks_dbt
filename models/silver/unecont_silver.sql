@@ -17,6 +17,5 @@ select id,
         and usuario_conferencia_contabilidade is null then 'Une.Admin'
         else usuario_conferencia_contabilidade
     end as usuario_conferencia,
-    data_conferencia_contabilidade,
     data_competencia
 from {{ source('dados_prod', 'unecont') }}  
