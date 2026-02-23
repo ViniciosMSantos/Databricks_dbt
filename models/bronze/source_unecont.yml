@@ -3,7 +3,7 @@ version: 2
 
 sources:
   - name: dados_prod
-    database: dados_prod
+    database: bronze
     tables:
       - name: unecont
 
